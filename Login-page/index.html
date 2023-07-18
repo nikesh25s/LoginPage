@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+
+ <!-- css file link -->
+ <link rel="stylesheet" href="chatbot.css">
+
+ <!-- font awesome icon cdn-->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+  <title>Hindalco Industries Limited - Login</title>
+ 
+
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+    }
+
+    .container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 300px;
+      border: 1px solid #ccc;
+      padding: 45px;
+      background-color: rgba(255, 255, 255, 0.5);
+      display: none;
+    }
+    figcaption{
+      position: absolute;
+      top:8%;
+      left:72%;
+      color: white;
+    }
+
+    .container.show {
+      display: block;
+    }
+    
+    .container h1 {
+      text-align: center;
+      margin-bottom: 5px;
+      margin-top: 10px;
+      color: #333;
+    }
+
+    .container h2 {
+      text-align: center;
+      margin-bottom: 3px;
+      color: #333;
+      font-style: italic;
+    }
+
+    .container label {
+      color: #333;
+    }
+    
+    
+
+    .container input[type="text"],
+    .container input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+    }
+
+    .container input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      background-color: grey;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .container input[type="submit"]:hover {
+      background-color: green;
+    }
+
+    .container .show-password {
+      margin-bottom: 10px;
+    }
+
+    .background-image {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      opacity: 0.8;
+    }
+
+    .loading-container {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: bold;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .loading-gif {
+      width: 200px;
+    }
+
+    .footer {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+      font-size: 12px;
+    }
+    #chatbot-button {
+  position: fixed;
+  bottom: 60px;
+  right: 20px;
+  z-index: 999;
+  background-color: rgb(250, 250, 150);
+  border-radius: 40px;
+}
+
+#chatbot-button img {
+  width: 80px; /* Adjust the width and height as per your logo dimensions */
+  height: 80px;
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Optional: Add a shadow effect */
+  cursor: pointer;
+}
+
+
+  </style>
+  <script>
+    window.addEventListener('load', function () {
+      var loadingContainer = document.getElementById('loading-container');
+      var loginContainer = document.getElementById('login-container');
+
+      setTimeout(function () {
+        loadingContainer.style.display = 'none';
+        loginContainer.classList.add('show');
+      }, 2000);
+    });
+
+    function togglePasswordVisibility() {
+      var passwordInput = document.getElementById('password');
+      var showPasswordCheckbox = document.getElementById('show-password');
+
+      if (showPasswordCheckbox.checked) {
+        passwordInput.type = 'text';
+      } else {
+        passwordInput.type = 'password';
+      }
+    }
+
+   
+    
+  </script>
+</head>
+
+<body>
+  <img class="background-image" src="WhatsApp Image 2023-06-22 at 10.37.51 AM.jpeg" alt="Background Image";>
+  <div class="loading-container" id="loading-container">
+    <img class="loading-gif" src="https://careers.adityabirla.com/assets/images/logo-loading.gif" alt="Loading">
+    <div>Loading...</div>
+  </div>
+
+  <div class="container" id="login-container">
+    <img src="https://www.hindalco.com/assets/images/header/logo.png" alt="Hindalco Industries Limited Logo"
+      style="width: 100px; display:block; margin: 0 auto 20px;">
+    <h1>Hindalco Industries Limited</h1>
+    <h2>Renusagar Power Division</h2>
+   
+    
+
+    <form action="/login" method="post">
+      <label for="userid">User ID:</label>
+      <input type="text" id="userid" name="userid" required>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+
+      <div class="show-password">
+        <input type="checkbox" id="show-password" onchange="togglePasswordVisibility()">
+        <label for="show-password">Show Password</label>
+      </div>
+
+      <input type="submit" value="Login">
+    </form>
+  </div>
+
+  <img src="Samarkan__2_-removebg-preview.png" alt="Renupower" width="800" height="200px" style="position: absolute; top:-10%; left: 58%;">
+  <figcaption>renusagar intranet knowledge management Portal</figcaption>
+
+
+  <div class="footer">
+    
+    <marquee behavior="scroll" direction="left">This website is the property of Hindalco Renusagar Power Division. It is accessible over the intranet for the use of company employees only. All users and contents of the site may be intercepted, monitored, recorded, audited, or inspected. By using the site, the user consents and accepts the terms & conditions specified herein. Unauthorized or improper use of the site may result in administrative disciplinary action. Please DO NOT LOGON if you do not agree to any of the stated conditions.</marquee>
+    <a href="contac.html">Contact Us
+      
+      
+    </a>
+
+
+    </div>
+<!-- ... Your existing code ... -->
+
+<!-- Chatbot Button with Logo 
+<a href="http://127.0.0.1:5502/index.html" id="chatbot-button">
+  <img src="chatbot.webp" alt="Chatbot Logo">
+</a>  -->
+
+
+
+  <div class="desc">
+       <button id="init" >CHATBOT</button>
+  </div>
+
+
+
+
+<div id="test" style="position: fixed;top: 4rem;right: 8rem;display: none;">
+        
+  <div class="child" id="chatbot">
+      
+      <div class="header">
+          
+          <div class="h-child">                  
+              <img src="chatbot.webp" alt="avatar" id="avatar">
+              <div>
+
+                  <span class="name">Chatbot</span>
+                  <br>
+                  <span style="color:lawngreen">online</span>
+              </div>
+            </div>
+          <div>
+              
+              <button class="refBtn"><i class="fa fa-refresh" onclick="initChat()"></i></button>
+          </div>
+      </div>
+      
+      <div id="chat-box">
+     
+      </div>
+      
+      <!-- User input section -->
+    
+      
+      <div class="footer1">
+          <span>powered by Hindalco</span>
+      </div>
+  </div>
+</div>
+
+<!-- js file  -->
+<script src="chatbot.js"></script>
+
+  
+  
+</body>
+
+</html>
+
+
